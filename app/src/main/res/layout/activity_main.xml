@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seven"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/my_style3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sign"
+                style="@style/my_style3"
+                android:text="версия 0.0.1 студия: Максима Аверина" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/my_style4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/max_Expression"
+                style="@style/my_style3"
+                android:text="Выражение" />
+
+            <TextView
+                android:id="@+id/max_Result"
+                style="@style/my_style4"
+                android:text="*Результат*" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/max_Open"
+                style="@style/my_style"
+                android:text="(" />
+
+            <TextView
+                android:id="@+id/max_open2"
+                style="@style/my_style"
+                android:text=")" />
+
+            <TextView
+                android:id="@+id/max_percent"
+                style="@style/my_style"
+                android:text="%" />
+
+            <ImageView
+                android:id="@+id/erase"
+                style="@style/my_style"
+                android:scaleType="center"
+                android:src="@drawable/abc_vector_test" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/even"
+                style="@style/my_style1"
+                android:text="7" />
+
+            <TextView
+                android:id="@+id/eight"
+                style="@style/my_style1"
+                android:text="8" />
+
+            <TextView
+                android:id="@+id/nine"
+                style="@style/my_style1"
+                android:text="9" />
+
+            <TextView
+                android:id="@+id/two"
+                style="@style/my_style"
+                android:text=":" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/four"
+                style="@style/my_style1"
+                android:text="4" />
+
+            <TextView
+                android:id="@+id/five"
+                style="@style/my_style1"
+                android:text="5" />
+
+            <TextView
+                android:id="@+id/six"
+                style="@style/my_style1"
+                android:text="6" />
+
+            <TextView
+                android:id="@+id/textView24"
+                style="@style/my_style"
+                android:text="*" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/one"
+                style="@style/my_style1"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/two"
+                style="@style/my_style1"
+                android:text="2" />
+
+            <TextView
+                android:id="@+id/tree"
+                style="@style/my_style1"
+                android:text="3" />
+
+            <TextView
+                android:id="@+id/minus"
+                style="@style/my_style"
+                android:text="-" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/my_style1"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/dot"
+                style="@style/my_style1"
+                android:text="." />
+
+            <TextView
+                android:id="@+id/textView31"
+                style="@style/my_style1"
+                android:text="=" />
+
+            <TextView
+                android:id="@+id/plus"
+                style="@style/my_style"
+                android:text="+" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
