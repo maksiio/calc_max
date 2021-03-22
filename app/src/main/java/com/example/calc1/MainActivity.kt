@@ -56,9 +56,10 @@ class MainActivity : AppCompatActivity() {
                 Result.text = longResult.toString()
              else
                  Result.text = result.toString()
-            } catch (e: Exception)
+            }
+            catch (e: Exception)
             {
-                Log.d("на ноль делить нельзя!","msg"+e.message)
+                Log.d("на ноль делить нельзя!","код"+e.message)
             }
         }
 
