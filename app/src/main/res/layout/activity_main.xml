@@ -75,7 +75,7 @@
                 android:id="@+id/erase"
                 style="@style/my_style5"
                 android:scaleType="center"
-                android:src="@mipmap/ic_launcher8" />
+                android:src="@mipmap/ic_launcher4" />
 
         </LinearLayout>
 
