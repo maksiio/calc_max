@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             }
             catch (e: Exception)
             {
-                Log.d("на ноль делить нельзя!","код"+e.message)
+                Log.d("error","код"+e.message)
             }
         }
 
