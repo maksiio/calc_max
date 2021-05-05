@@ -9,26 +9,26 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.calc_max_xml.*
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 import kotlin.Result
 
 class calc_max : AppCompatActivity() {
 
-    private var soundPool:  SoundPool?= null
-    private var soundId1 : Int = 0
+    private var soundPool: SoundPool? = null
+    private var soundId1: Int = 0
+    private var soundId2: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calc_max_xml)
 
-        findViewById<ImageView>(R.id.AS).setOnClickListener {
-            playSound(it)
-
-        }
 
         soundPool = SoundPool(30, AudioManager.STREAM_MUSIC, 0)
         soundId1 = soundPool!!.load(baseContext, R.raw.shik, 1)
+        soundId2 = soundPool!!.load(baseContext, R.raw.mag_two, 1)
 
 
 
@@ -63,35 +63,55 @@ class calc_max : AppCompatActivity() {
 
         //очистка полная
         AS.setOnClickListener {
-            Result.text = ""
-            Expression.text = ""
+            playSound(1)
+            open2.setOnClickListener {
+                playSound(1)
+                AS.setOnClickListener {
+                    playSound(1)
+                    Result.text = ""
+                    Expression.text = ""
+                }
+
+                //вычисление
+                equally.setOnClickListener {
+                    try {
+                        val expression = ExpressionBuilder(Expression.text.toString()).build()
+                        val result = expression.evaluate()
+                        val longResult = result.toLong()
+                        if (result == longResult.toDouble())
+                            Result.text = longResult.toString()
+                        else
+                            Result.text = result.toString()
+                    } catch (e: Exception) {
+                        Log.d("error", "код" + e.message)
+                    }
+                }
+            }
+
+
         }
 
-        //вычисление
-        equally.setOnClickListener {
-            try {
-             val expression = ExpressionBuilder(Expression.text.toString()).build()
-             val result = expression.evaluate()
-             val longResult = result.toLong()
-             if(result == longResult.toDouble())
-                Result.text = longResult.toString()
-             else
-                 Result.text = result.toString()
-            }
-            catch (e: Exception)
-            {
-                Log.d("error","код"+e.message)
-            }
+
+
+
+
+    }
+
+    fun playSound(sound: Int) {
+
+        var soundId = 0
+        var text = ""
+        when (sound) {
+            1 -> {soundId = soundId1; text = "Очистка..." }
+            2 -> soundId = soundId2
+//            3 -> soundId = soundId3
+//            4 -> soundId = soundId4
+//            5 -> soundId = soundId5
+//            6 -> soundId = soundId6
         }
+        soundPool?.play(soundId, 1F, 1F, 0, 0, 1F)
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
-
-
-    fun playSound(view: View)
-    {
-        soundPool?.play(soundId1, 1F, 1F, 0, 0, 1F)
-        Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
-    }
-
     fun pokaz(stroka: String, ochistka: Boolean) {
 
         if (Result.text.isNotEmpty()) {
@@ -105,6 +125,5 @@ class calc_max : AppCompatActivity() {
             Expression.append(stroka)
             Result.text = ""
         }
-
     }
 }
