@@ -1,15 +1,36 @@
 package com.example.calc1
 
+import android.media.AudioManager
+import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.calc_max_xml.*
+import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.Result
 
-class MainActivity : AppCompatActivity() {
+class calc_max : AppCompatActivity() {
+
+    private var soundPool:  SoundPool?= null
+    private var soundId1 : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.calc_max_xml)
+
+        findViewById<ImageView>(R.id.AS).setOnClickListener {
+            playSound(it)
+            
+        }
+
+        soundPool = SoundPool(30, AudioManager.STREAM_MUSIC, 0)
+        soundId1 = soundPool!!.load(baseContext, R.raw.mag_two, 1)
+
+
 
         one.setOnClickListener { pokaz("1", true) }
         two.setOnClickListener { pokaz("2", true) }
@@ -66,6 +87,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+
+    fun playSound(view: View)
+    {
+        soundPool?.play(soundId1, 1F, 1F, 0, 0, 1F)
+        Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
     }
 
     fun pokaz(stroka: String, ochistka: Boolean) {

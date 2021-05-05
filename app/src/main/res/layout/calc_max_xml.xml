@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_700"
-    tools:context=".MainActivity">
+    tools:context=".calc_max">
 
 
     <LinearLayout
@@ -24,7 +24,7 @@
             <TextView
                 android:id="@+id/sign"
                 style="@style/my_style3"
-                android:text="версия: 0.0.1.2" />
+                android:text="версия: 1.0.0" />
 
         </LinearLayout>
 
