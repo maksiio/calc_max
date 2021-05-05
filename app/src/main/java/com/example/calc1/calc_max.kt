@@ -24,7 +24,7 @@ class calc_max : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.AS).setOnClickListener {
             playSound(it)
-            
+
         }
 
         soundPool = SoundPool(30, AudioManager.STREAM_MUSIC, 0)
@@ -83,10 +83,6 @@ class calc_max : AppCompatActivity() {
                 Log.d("error","код"+e.message)
             }
         }
-
-
-
-
     }
 
 
