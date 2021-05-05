@@ -28,7 +28,7 @@ class calc_max : AppCompatActivity() {
         }
 
         soundPool = SoundPool(30, AudioManager.STREAM_MUSIC, 0)
-        soundId1 = soundPool!!.load(baseContext, R.raw.mag_two, 1)
+        soundId1 = soundPool!!.load(baseContext, R.raw.shik, 1)
 
 
 
