@@ -5,7 +5,7 @@
     android:id="@+id/seven1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700"
+    android:background="@drawable/sky"
     tools:context=".calc_max">
 
 
@@ -19,12 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:alpha="0.6"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/sign"
                 style="@style/my_style3"
-                android:text="версия: 1.0.0" />
+                android:text="версия: 1.0.1" />
 
         </LinearLayout>
 
@@ -33,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
+            android:alpha="0.6"
             android:orientation="vertical">
 
             <TextView
@@ -58,8 +60,7 @@
             <ImageView
                 android:id="@+id/AS"
                 style="@style/my_style5"
-                android:src="@mipmap/ic_launcher3"
-                android:scaleType="center"/>
+                android:src="@drawable/ic_cancel"/>
 
             <TextView
                 android:id="@+id/open2"
@@ -74,8 +75,7 @@
             <ImageView
                 android:id="@+id/erase"
                 style="@style/my_style5"
-                android:scaleType="center"
-                android:src="@mipmap/ic_launcher4" />
+                android:src="@drawable/ic_backspace_24" />
 
         </LinearLayout>
 
